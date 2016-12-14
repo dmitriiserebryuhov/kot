@@ -110,7 +110,7 @@ class SiteController extends Controller
         
         if ($form->load(Yii::$app->request->post()) && $form->validate()){
             $name = HTML::encode($form->name);
-            $email = HTML::encode($form->email);  
+            $email = HTML::encode($form->email);
 
             $form->file = UploadedFile::getInstance($form, 'file');
 
@@ -131,6 +131,12 @@ class SiteController extends Controller
 
     public function actionSport(){
 
-        return $this->render('sport');
+        $rows = (new \yii\db\Query())
+    ->select(['id'])
+    ->from('vimi_user')
+    ->all();
+
+
+        return $this->render('sport',['rows'=>$rows]);
     }
 }
