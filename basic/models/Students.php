@@ -5,7 +5,7 @@ use \yii\base\Model;
 use yii\db\ActiveRecord;
 
 
-class SportForm extends ActiveRecord
+class Students extends ActiveRecord
 {
 
 

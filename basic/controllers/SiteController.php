@@ -129,14 +129,5 @@ class SiteController extends Controller
             );
     }
 
-    public function actionSport(){
-
-        $rows = (new \yii\db\Query())
-    ->select(['id'])
-    ->from('vimi_user')
-    ->all();
-
-
-        return $this->render('sport',['rows'=>$rows]);
-    }
+ 
 }
